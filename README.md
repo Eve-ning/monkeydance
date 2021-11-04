@@ -1,6 +1,6 @@
 # [![monkeydance](Images/banner.png)](https://dev-evening.itch.io/monkeydance)
 
-[**Play Here**](https://dev-evening.itch.io/monkeydance)
+## [**Play Here on itch.io**](https://dev-evening.itch.io/monkeydance)
 
 Created in a 24h for a school mini-project.
 
