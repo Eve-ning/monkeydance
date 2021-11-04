@@ -6,6 +6,8 @@ Created in a 24h for a school mini-project.
 
 Play simply using arrow keys.
 
+Inspired by **monkeytype**
+
 ## Screenshots
 
 ![Gameplay Image](Images/gameplay.png)
