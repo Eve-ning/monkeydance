@@ -54,17 +54,15 @@ private IEnumerator SetArrowGood()
 }
 ```
 
-By setting the **bool trigger** of the `Animator`, we automatically run the animation of the arrow.
+By setting the **bool trigger** of the `Animator`, we run the animation of the arrow.
 
-One could run a separate coroutine that **LERPs** the animation but I don't require that much control.
-
-Most of the other animations are done similarly.
+One could run a separate coroutine that **LERPs** the animation, see `GameManager.DeleteFirstArrowRowAnim`
 
 ### Coroutines
 
-The game runs heavily on Coroutines as some animations run asynchronously and I want a smooth gameplay.
+The game runs heavily on Coroutines as animations run asynchronously for a smooth gameplay.
 
-A simple example used is the Key Per Second (KPS) Tracker
+For example, the Key Per Second (KPS) Tracker
 
 ```cs
 private IEnumerator AddKpsThread()
@@ -76,13 +74,13 @@ private IEnumerator AddKpsThread()
 }
 ```
 
-Notice how the accumulation of `Coroutine` threads can simulate a KPS system.
+Notice how the accumulation of `Coroutine` threads simulate a KPS system.
 
 A bug is due to this though, I'll leave it as it's not vital.
 
 ### Prefab Generation & Layout
 
-The prefab arrows are generated are layed out in a wrap-around grid.
+The prefab arrows generated are laid out in a wrap-around grid.
 
 e.g.
 
