@@ -20,7 +20,7 @@ public partial class GameManager : MonoBehaviour
 
     private List<GameObject> _arrowObjects = new List<GameObject>();
     private const int ArrowsPerRow = 10;
-    private const int RowsOfArrows = 10;
+    private const int RowsOfArrows = 6;
 
     private const int AnimFrames = 10;
 
@@ -65,8 +65,8 @@ public partial class GameManager : MonoBehaviour
 
     IEnumerator CheckArrowRow()
     {
-        if (arrowIx < 2 * ArrowsPerRow) yield break;
-        arrowIx -= ArrowsPerRow;
+        if (arrowIx % ArrowsPerRow != 0) yield break;
+        // arrowIx -= ArrowsPerRow;
         DeleteFirstArrowRow();
         CreateArrows(ArrowsPerRow);
     }
@@ -79,7 +79,7 @@ public partial class GameManager : MonoBehaviour
     IEnumerator DeleteFirstArrowRowAnim()
     {
         Vector3 originalPosition = playArea.transform.localPosition;
-        for (int i = 0; i < AnimFrames; i++)
+        for (int i = 0; i <= AnimFrames; i++)
         {
             playArea.transform.localPosition = 
                 Vector3.Lerp(originalPosition,
@@ -88,9 +88,9 @@ public partial class GameManager : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime / AnimFrames);    
         }
 
-        for (int i = 0; i < ArrowsPerRow; i++) Destroy(_arrowObjects[i]);
-        _arrowObjects.RemoveRange(0, ArrowsPerRow);
-        playArea.transform.localPosition = originalPosition;
+        // for (int i = 0; i < ArrowsPerRow; i++) Destroy(_arrowObjects[i]);
+        // _arrowObjects.RemoveRange(0, ArrowsPerRow);
+        // playArea.transform.localPosition = originalPosition;
     }
    
     /// <summary>
